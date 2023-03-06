@@ -1,7 +1,9 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -9,6 +11,8 @@ const val KEY_ENTERED_TEXT = "ENTERED_TEXT"
 class SecondActivity : AppCompatActivity() {
 
     private lateinit var textViewEntered: TextView
+    private lateinit var buttonGoToThirdActivity: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "SecondActivity before onCreate")
         super.onCreate(savedInstanceState)
@@ -17,9 +21,15 @@ class SecondActivity : AppCompatActivity() {
         val enteredText: String? = intent.getStringExtra(KEY_ENTERED_TEXT)
         textViewEntered = findViewById(R.id.textViewEntered)
         textViewEntered.setText(enteredText)
-    }
+        buttonGoToThirdActivity = findViewById(R.id.buttonGoToThirdActivity)
 
-    override fun onStart() {
+        buttonGoToThirdActivity.setOnClickListener {
+            val intentGoToThird = Intent(this@SecondActivity, ThirdActivity::class.java)
+            startActivity(intentGoToThird)
+        }
+    }
+}
+   /* override fun onStart() {
         super.onStart()
         Log.d(TAG, "SecondActivity onStart")
     }
@@ -44,3 +54,4 @@ class SecondActivity : AppCompatActivity() {
         Log.d(TAG, "SecondActivity onDestroy")
     }
 }
+*/
