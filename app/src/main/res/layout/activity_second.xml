@@ -28,12 +28,25 @@
         android:id="@+id/buttonGoToThirdActivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Go further"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.835"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewEntered" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewEntered"
+        app:layout_constraintVertical_bias="0.866" />
+
+    <Button
+        android:id="@+id/buttonGoBackToFirst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonGoToThirdActivity"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewEntered"
+        app:layout_constraintVertical_bias="0.866" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

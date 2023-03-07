@@ -12,6 +12,7 @@ class SecondActivity : AppCompatActivity() {
 
     private lateinit var textViewEntered: TextView
     private lateinit var buttonGoToThirdActivity: Button
+    private lateinit var buttonGoBackToFirst: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "SecondActivity before onCreate")
@@ -22,10 +23,16 @@ class SecondActivity : AppCompatActivity() {
         textViewEntered = findViewById(R.id.textViewEntered)
         textViewEntered.setText(enteredText)
         buttonGoToThirdActivity = findViewById(R.id.buttonGoToThirdActivity)
+        buttonGoBackToFirst = findViewById(R.id.buttonGoBackToFirst)
 
         buttonGoToThirdActivity.setOnClickListener {
             val intentGoToThird = Intent(this@SecondActivity, ThirdActivity::class.java)
             startActivity(intentGoToThird)
+        }
+
+        buttonGoBackToFirst.setOnClickListener{
+            val intentGoBackToFirst = Intent(this@SecondActivity, FirstActivity::class.java)
+            startActivity(intentGoBackToFirst)
         }
     }
 }

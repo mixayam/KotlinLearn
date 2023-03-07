@@ -12,6 +12,7 @@ class FirstActivity : AppCompatActivity() {
 
     private lateinit var editText: EditText
     private lateinit var buttonGoToSecondActivity: Button
+    private lateinit var buttonSkipToThird: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "FirstActivity before onCreate")
@@ -20,12 +21,18 @@ class FirstActivity : AppCompatActivity() {
         Log.d(TAG, "FirstActivity onCreate")
         editText = findViewById(R.id.editText)
         buttonGoToSecondActivity = findViewById(R.id.buttonGoToSecondActivity)
+        buttonSkipToThird = findViewById(R.id.buttonSkipToThird)
 
         buttonGoToSecondActivity.setOnClickListener {
             val intentGoToSecond = Intent(this@FirstActivity, SecondActivity::class.java)
             intentGoToSecond.putExtra(KEY_ENTERED_TEXT, editText.text.toString())
             intentGoToSecond.putExtra("key", 123)
             startActivity(intentGoToSecond)
+        }
+
+        buttonSkipToThird.setOnClickListener {
+            val intentSkipToThird = Intent(this@FirstActivity, ThirdActivity::class.java)
+            startActivity(intentSkipToThird)
         }
     }
 
